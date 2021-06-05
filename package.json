@@ -18,7 +18,9 @@
     },
     "homepage": "https://github.com/bloaf-org/blecs#readme",
     "dependencies": {
+        "@types/react": "^17.0.9",
         "blecs": "^1.0.4",
+        "react": "^17.0.2",
         "three": "^0.128.0"
     },
     "devDependencies": {
