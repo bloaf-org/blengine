@@ -1,22 +1,25 @@
 # blengine
 
-## Quick start
-
-### Installation
+## Installation
 
 ```bash
 npm install blengine
 ```
 
-### Usage
+## Usage
 
-```typescript
-import bl, {BlengineConfig} from "blengine";
+### Inside of a React application
 
-// declaratively define
-let config : BlengineConfig = {
+All that is needed to quickly bootstrap a single page React/THREE.js app with blengine is to import the `<AppContainer />` component:
+```tsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {AppContainer} from "blengine";
 
-};
-
-bl.init();
+ReactDOM.render(
+  <React.StrictMode>
+    <AppContainer />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 ```
