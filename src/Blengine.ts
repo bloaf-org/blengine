@@ -3,6 +3,13 @@ import {BlengineConfig} from "./config";
 import ecs, {Signature} from "blecs";
 import initControls from "./controls/initControls";
 
+import {
+    GetKey,
+    GetKeyInteger,
+    GetMouse,
+    IsPointerLock,
+} from "./controls";
+
 // designed to be a singleton class instance
 class Blengine {
 
@@ -17,7 +24,14 @@ class Blengine {
         this.scene = new THREE.Scene();
         this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 10000 );
         this.renderer = new THREE.WebGLRenderer({ antialias: true, logarithmicDepthBuffer: true });
-        this.controls = {};
+        this.controls = {
+            GetKey: GetKey,
+            GetKeyInteger: GetKeyInteger,
+            GetMouse: GetMouse,
+            IsPointerLock: IsPointerLock,
+        };
+
+
         initControls(this.renderer.domElement);
     }
 
