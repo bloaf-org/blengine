@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import {BlengineConfig} from "./config";
 import ecs, {Signature} from "blecs";
+import initControls from "./controls/initControls";
 
 // designed to be a singleton class instance
 class Blengine {
@@ -9,12 +10,15 @@ class Blengine {
     scene : THREE.Scene;
     camera : THREE.PerspectiveCamera;
     renderer : THREE.WebGLRenderer;
+    controls : any;
 
     constructor() {
         this.clock = new THREE.Clock();
         this.scene = new THREE.Scene();
         this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 10000 );
         this.renderer = new THREE.WebGLRenderer({ antialias: true, logarithmicDepthBuffer: true });
+        this.controls = {};
+        initControls(this.renderer.domElement);
     }
 
     init(config : BlengineConfig) {
