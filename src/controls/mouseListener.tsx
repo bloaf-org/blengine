@@ -5,9 +5,9 @@ export default function initMouseListener(canvas : HTMLCanvasElement) {
     document.addEventListener("mousedown", (evt : MouseEvent) => {
         if ( document.pointerLockElement === canvas ) {
             if (evt.button === 0) {
-                bl.controls.mouse.left = true;
+                window.controls.mouse.left = true;
             } else {
-                bl.controls.mouse.right = true;
+                window.controls.mouse.right = true;
             }
         } else {
             canvas.requestPointerLock();
@@ -17,9 +17,9 @@ export default function initMouseListener(canvas : HTMLCanvasElement) {
     document.addEventListener("mouseup", (evt : MouseEvent) => {
         if ( document.pointerLockElement === canvas ) {
             if (evt.button === 0) {
-                bl.controls.mouse.left = false;
+                window.controls.mouse.left = false;
             } else {
-                bl.controls.mouse.right = false;
+                window.controls.mouse.right = false;
             }
         } else {
             
@@ -30,19 +30,19 @@ export default function initMouseListener(canvas : HTMLCanvasElement) {
     document.addEventListener( "mousemove" , (evt : MouseEvent) => {
 
         if (document.pointerLockElement === canvas) {
-            if (!bl.controls.mouse.isPointerLock) {
-                bl.controls.mouse.pos.x = evt.clientX;
-                bl.controls.mouse.pos.y = evt.clientY;
-                bl.controls.mouse.isPointerLock = true;
+            if (!window.controls.mouse.isPointerLock) {
+                window.controls.mouse.pos.x = evt.clientX;
+                window.controls.mouse.pos.y = evt.clientY;
+                window.controls.mouse.isPointerLock = true;
             } else {
-                bl.controls.mouse.delta.x = evt.movementX;
-                bl.controls.mouse.delta.y = evt.movementY;
+                window.controls.mouse.delta.x = evt.movementX;
+                window.controls.mouse.delta.y = evt.movementY;
             }
             
         } else {
             canvas.requestPointerLock();
-            if (bl.controls.mouse.isPointerLock) {
-                bl.controls.mouse.isPointerLock = false;
+            if (window.controls.mouse.isPointerLock) {
+                window.controls.mouse.isPointerLock = false;
             }
         }
         

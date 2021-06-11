@@ -1,8 +1,7 @@
-import bl from "../index";
 
 const keyChangeHandler = (evt : KeyboardEvent) => {
     let toggle : boolean = evt.type === "keydown" ? true : false;
-    bl.controls.keys[evt.key] = toggle;
+    window.controls.keys[evt.key] = toggle;
 
 };
 

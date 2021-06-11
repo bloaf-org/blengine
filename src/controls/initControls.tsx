@@ -1,7 +1,6 @@
 import initMouseListener from "./mouseListener";
 import initKeyboardListener from "./keyboardListener";
 import * as THREE from "three";
-import bl from "../index";
 
 // stops you from using a key 
 // which isn't set up + adds nice autocomplete
@@ -131,7 +130,7 @@ export default function initControls(canvas : HTMLCanvasElement) {
         }
     }
 
-    bl.controls = controls;
+    window.controls = controls;
 
     initMouseListener(canvas);
     initKeyboardListener();

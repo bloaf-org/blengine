@@ -1,7 +1,6 @@
-import bl from "../index";
 
 function GetKey(key : string) : boolean {
-    return bl.controls.keys[key];
+    return window.controls.keys[key];
 }
 
 function GetKeyInteger(key : string) : number {
@@ -9,11 +8,11 @@ function GetKeyInteger(key : string) : number {
 }
 
 function GetMouse() : THREE.Vector2 {
-    return bl.controls.mouse.delta;
+    return window.controls.mouse.delta;
 }
 
 function IsPointerLock() : boolean {
-    return bl.controls.mouse.isPointerLock;
+    return window.controls.mouse.isPointerLock;
 }
 
 export {
