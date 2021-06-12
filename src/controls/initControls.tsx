@@ -132,7 +132,7 @@ export default function initControls(canvas : HTMLCanvasElement) {
 
     window.controls = controls;
 
-    initMouseListener(canvas);
+    // initMouseListener(canvas);
     initKeyboardListener();
 
 
